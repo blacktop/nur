@@ -38,7 +38,7 @@ pkgs.stdenv.mkDerivation {
     mkdir -p $out/bin
     cp -vr ./ipsw $out/bin/ipsw
     installManPage ./manpages/ipsw.1.gz
-    installShellCompletion ./completions/*
+    installShellCompletion ./completions/ipsw/*
   '';
 
   system = system;
