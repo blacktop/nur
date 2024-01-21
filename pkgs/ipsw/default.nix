@@ -9,10 +9,10 @@ system ? builtins.currentSystem
 }:
 let
   shaMap = {
-    x86_64-linux = "17ip0yr1s8w0srgyf33vinxpg7510fb2kzk6x35l1yhmh68kns8y";
-    aarch64-linux = "1l4bd7q13absni6z4cxq5w2kz2n9b7c4kh4hk1q3cl716h0id1rf";
-    x86_64-darwin = "1cy20irxl68x2161m235ys1a5m8yw5r9hfcjzi9z494b8l17q2k3";
-    aarch64-darwin = "1cllwcnqxr8f7jnh4fv7ldkvlis70zbjcwxrpfcf6h325xq38kvv";
+    x86_64-linux = "0bqps2nymfn23fr6mhgh5m5jwzqkjpgdvw8mqz8wqsa2pd4rlwqk";
+    aarch64-linux = "0hka6qwswynghwx352sm5vql7gccw9mbc2js01awyvhbwdgz7bxc";
+    x86_64-darwin = "07m09rlbx0f4d04hbn7gk3h2i4qd6zlp9iwm3cb6apibbg1dm6db";
+    aarch64-darwin = "0312kngkwfsmkdp6yy7xzciydw69q860dcfqadi273qjqjjk6mni";
   };
 
   urlMap = {
@@ -30,7 +30,7 @@ pkgs.stdenv.mkDerivation {
     sha256 = shaMap.${system};
   };
 
-  sourceRoot = "ipsw_3.1.448_macOS_arm64";
+  sourceRoot = ".";
 
   nativeBuildInputs = [ installShellFiles ];
 
