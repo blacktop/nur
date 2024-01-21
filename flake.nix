@@ -4,13 +4,10 @@
   outputs = { self, nixpkgs }:
     let
       systems = [
-        "x86_64-darwin"
-        "aarch64-darwin"        
-        "x86_64-linux"
-        "i686-linux"
-        "aarch64-linux"
-        "armv6l-linux"
-        "armv7l-linux"
+      "aarch64-darwin"
+      "x86_64-darwin"
+      "aarch64-linux"
+      "x86_64-linux"
       ];
       forAllSystems = f: nixpkgs.lib.genAttrs systems (system: f system);
     in
