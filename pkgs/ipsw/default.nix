@@ -9,22 +9,22 @@
 let
   inherit (stdenvNoCC.hostPlatform) system;
   shaMap = {
-    x86_64-linux = "136jlwq51m6fs0wqg38llas1dpkrf4bvpdx2yyqdzrqj0kc9jryg";
-    aarch64-linux = "0f9ihw8584qlpl0zcjgc9rgxlrbwj0idci3wrvsyzjl1w3gqpai9";
-    x86_64-darwin = "1hjy7rdibd528ci6p8g2k00r8ny4szc80sdh1mm2pjkw25fpmjaz";
-    aarch64-darwin = "0xmiyvbf62qw4cahi8yszkr0mnilhwk5wj7559gp6hvhg97w5pq3";
+    x86_64-linux = "0hfkch0h04ay9lzp217h5fs3z86qcj2db6wvdyclg7hgcpd9jndr";
+    aarch64-linux = "0a2ayrndl6gf5ivws45clwqf9xjrkwdm1chi3v9mfkvf6knmkrk0";
+    x86_64-darwin = "1m4wp8133c07b7lqn0l3w2a7wxmqvsqx0c9hlj44a20cs6k0fwx6";
+    aarch64-darwin = "0s960sqs0g6r7sxyyk4hvfmygayf7qpk50pz15cv44wy4qxla5fp";
   };
 
   urlMap = {
-    x86_64-linux = "https://github.com/blacktop/ipsw/releases/download/v3.1.648/ipsw_3.1.648_linux_x86_64.tar.gz";
-    aarch64-linux = "https://github.com/blacktop/ipsw/releases/download/v3.1.648/ipsw_3.1.648_linux_arm64.tar.gz";
-    x86_64-darwin = "https://github.com/blacktop/ipsw/releases/download/v3.1.648/ipsw_3.1.648_macOS_x86_64.tar.gz";
-    aarch64-darwin = "https://github.com/blacktop/ipsw/releases/download/v3.1.648/ipsw_3.1.648_macOS_arm64.tar.gz";
+    x86_64-linux = "https://github.com/blacktop/ipsw/releases/download/v3.1.649/ipsw_3.1.649_linux_x86_64.tar.gz";
+    aarch64-linux = "https://github.com/blacktop/ipsw/releases/download/v3.1.649/ipsw_3.1.649_linux_arm64.tar.gz";
+    x86_64-darwin = "https://github.com/blacktop/ipsw/releases/download/v3.1.649/ipsw_3.1.649_macOS_x86_64.tar.gz";
+    aarch64-darwin = "https://github.com/blacktop/ipsw/releases/download/v3.1.649/ipsw_3.1.649_macOS_arm64.tar.gz";
   };
 in
 stdenvNoCC.mkDerivation {
   pname = "ipsw";
-  version = "3.1.648";
+  version = "3.1.649";
   src = fetchurl {
     url = urlMap.${system};
     sha256 = shaMap.${system};
