@@ -9,10 +9,10 @@
 let
   inherit (stdenvNoCC.hostPlatform) system;
   shaMap = {
-    x86_64-linux = "0a9s9wwmhnzrk3fnmwp0ak0nsycg0ydz0fv4mz0sjr16wjd3iil3";
-    aarch64-linux = "0lyj03ipwscfl0i93f6arzzgqaax7j946xvypss3cg8s2m3wkapw";
-    x86_64-darwin = "0s3aidq70zl3psql077vsv07298x3370bdyy1fdl7h73fx01fq01";
-    aarch64-darwin = "1cai9vyz2zg61fb09nqwk98raiz8g8mrr0rxk4cq7b0y6l7kx7ab";
+    x86_64-linux = "0wjrxy8vy7c2fnsgmfkg4zxh20lrbf4v8sb289xf8ndkviacbfm9";
+    aarch64-linux = "1sv8c6hqvlxxv67cj0sgw6lr3zmydf1wy3v77pmdj75vm5qajf3k";
+    x86_64-darwin = "1ccbiwr7vpswqrmfp9r7am8hnrf54vr2yis9ch8cl72xf5xyahq3";
+    aarch64-darwin = "1ka0wk5nplb12j8xp0qza4p73r8qq2f2siw3i0vl8vlz2ccl72bj";
   };
 
   urlMap = {
