@@ -15,4 +15,5 @@
   overlays = import ./overlays; # nixpkgs overlays
 
   ipsw = pkgs.callPackage ./pkgs/ipsw { };
+  ida-mcp = pkgs.callPackage ./pkgs/ida-mcp { };
 }
