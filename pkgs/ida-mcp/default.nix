@@ -7,27 +7,27 @@ let
   inherit (stdenvNoCC.hostPlatform) system;
   supported = {
     x86_64-linux = {
-      url = "https://github.com/blacktop/ida-mcp-rs/releases/download/v9.3.24/ida-mcp_9.3.24_Linux_x86_64.tar.gz";
-      hash = "sha256-Ls9ZaPWTFA82waOtndF4lN/ZDC9P1PfEGJxMkhXqNiQ=";
+      url = "https://github.com/blacktop/ida-mcp-rs/releases/download/v9.3.25/ida-mcp_9.3.25_Linux_x86_64.tar.gz";
+      hash = "sha256-7A2dml9xVKSHU9EHNJWhe5utP5c6Nn1QSejK0V+Ovhg=";
     };
     aarch64-linux = {
-      url = "https://github.com/blacktop/ida-mcp-rs/releases/download/v9.3.24/ida-mcp_9.3.24_Linux_arm64.tar.gz";
-      hash = "sha256-VaK1I8sChVntqkfphLpDopCvS13nt2ySgxjiQVsfiLw=";
+      url = "https://github.com/blacktop/ida-mcp-rs/releases/download/v9.3.25/ida-mcp_9.3.25_Linux_arm64.tar.gz";
+      hash = "sha256-TboOEKq2aWudqqzeQ8fiXbeepVkN4n4Rnqzi5mDTWJ8=";
     };
     x86_64-darwin = {
-      url = "https://github.com/blacktop/ida-mcp-rs/releases/download/v9.3.24/ida-mcp_9.3.24_Darwin_x86_64.tar.gz";
-      hash = "sha256-tfpReVcixZsG3X0+oOzgtuKGOKN/+6d0XrRiEg2w770=";
+      url = "https://github.com/blacktop/ida-mcp-rs/releases/download/v9.3.25/ida-mcp_9.3.25_Darwin_x86_64.tar.gz";
+      hash = "sha256-tq6PKkh0wXWsfyjMbZ3PC78Wn9NMXxyNKb6mmVlqXAU=";
     };
     aarch64-darwin = {
-      url = "https://github.com/blacktop/ida-mcp-rs/releases/download/v9.3.24/ida-mcp_9.3.24_Darwin_arm64.tar.gz";
-      hash = "sha256-PNNkCkmE4XUCw9wN4DwtxQZY41ot8WYSBUIkJUCWzgQ=";
+      url = "https://github.com/blacktop/ida-mcp-rs/releases/download/v9.3.25/ida-mcp_9.3.25_Darwin_arm64.tar.gz";
+      hash = "sha256-BbDLFXA/uWJFqS1T5ZClIfyVWzMsE8Ow03hC5IJWOOw=";
     };
   };
   platform = supported.${system} or (throw "ida-mcp: unsupported system ${system}");
 in
 stdenvNoCC.mkDerivation {
   pname = "ida-mcp";
-  version = "9.3.24";
+  version = "9.3.25";
   src = fetchurl {
     url = platform.url;
     sha256 = platform.hash;
