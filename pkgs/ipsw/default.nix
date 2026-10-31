@@ -9,22 +9,22 @@
 let
   inherit (stdenvNoCC.hostPlatform) system;
   shaMap = {
-    x86_64-linux = "0sccmbz9biq45pmg51691fm9k9xz628ril5rd2whmsazhbp46670";
-    aarch64-linux = "06ymmmmsqf6wrzd2l3qr17nfgynjr532ab3z6syf416y6flba8ca";
-    x86_64-darwin = "1h8rw3wb74f7y0vpfib4g1c9jv9fhp1mhc25xacvmv9k912713i0";
-    aarch64-darwin = "13vlq8nic60066b8mmjqx29x96752cj97w717gfpm0d4w9zzr4xr";
+    x86_64-linux = "0g57ww89vrji4a9cgwlf6sl4jjmm68d9mqqm9375drn635if9dhn";
+    aarch64-linux = "05yzszxiniffxhrla6fdcfwb7im8a6ri8ph48gnmbzzz8zqzvc46";
+    x86_64-darwin = "1bxs9hyb34pn140zfvdy4rbf73gwij7kg5hvivr6p9k4d8j04kh4";
+    aarch64-darwin = "023fr6363chpdgr5wq65x1r011iwdj4nc2968z3l6fas4r3ky4sz";
   };
 
   urlMap = {
-    x86_64-linux = "https://github.com/blacktop/ipsw/releases/download/v3.1.666/ipsw_3.1.666_linux_x86_64.tar.gz";
-    aarch64-linux = "https://github.com/blacktop/ipsw/releases/download/v3.1.666/ipsw_3.1.666_linux_arm64.tar.gz";
-    x86_64-darwin = "https://github.com/blacktop/ipsw/releases/download/v3.1.666/ipsw_3.1.666_macOS_x86_64.tar.gz";
-    aarch64-darwin = "https://github.com/blacktop/ipsw/releases/download/v3.1.666/ipsw_3.1.666_macOS_arm64.tar.gz";
+    x86_64-linux = "https://github.com/blacktop/ipsw/releases/download/v3.1.740/ipsw_3.1.740_linux_x86_64.tar.gz";
+    aarch64-linux = "https://github.com/blacktop/ipsw/releases/download/v3.1.740/ipsw_3.1.740_linux_arm64.tar.gz";
+    x86_64-darwin = "https://github.com/blacktop/ipsw/releases/download/v3.1.740/ipsw_3.1.740_macOS_x86_64.tar.gz";
+    aarch64-darwin = "https://github.com/blacktop/ipsw/releases/download/v3.1.740/ipsw_3.1.740_macOS_arm64.tar.gz";
   };
 in
 stdenvNoCC.mkDerivation {
   pname = "ipsw";
-  version = "3.1.666";
+  version = "3.1.740";
   src = fetchurl {
     url = urlMap.${system};
     sha256 = shaMap.${system};
@@ -35,10 +35,12 @@ stdenvNoCC.mkDerivation {
   nativeBuildInputs = [ installShellFiles ];
 
   installPhase = ''
+    runHook preInstall
     mkdir -p $out/bin
     cp -vr ./ipsw $out/bin/ipsw
     installManPage ./manpages/ipsw.1.gz
     installShellCompletion ./completions/ipsw/*
+    runHook postInstall
   '';
 
   meta = {
